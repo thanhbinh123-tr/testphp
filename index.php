@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                pause: 'none'
+            })
+        });
+    </script>
 
 
 </head>
@@ -89,13 +95,7 @@
 
     <div class="navButton" id="previous">&#10094;</div>
     <div class="navButton" id="next">&#10095;</div>
-    <script>
-        $(document).ready(function() {
-            $('#myCarousel').carousel({
-                pause: 'none'
-            })
-        });
-    </script>
+    
 </body>
 
 </html>
