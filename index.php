@@ -48,7 +48,7 @@
                         </ul>
                     </li>
                     <li><a href="./Interior Design.php">Intetior Design</a></li>
-                    <li><a href="./index.php" data-ajax="false">Logout</a></li>
+                    <li><a type="button" href="./index.php" name="logoutBtn">Logout</a></li>
                     
                              </form>
                              ';
