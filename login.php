@@ -1,67 +1,85 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
     <title>JB Studio</title>
-    <link rel="stylesheet" href="C:/Web_Desgin/Styles/JBStudio.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Styles/JBStudio.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+
+
 </head>
 
 <body>
-    <img class="logo" src="./Images/logo.jpg" alt="">
-    <ul class="menu cf">
-        <li><a href="./index.php" data-ajax="false">Home</a></li>
-        <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
-        <li>
-            <a href="">Catalogue</a>
-            <ul class="submenu">
-                <li><a href="./Catalogue/Ofice.html" data-ajax="false">Office</a></li>
-                <li><a href="./Catalogue/YourHome.html" data-ajax="false">Your Home</a></li>
-            </ul>
-        </li>
-        <li><a href="./Interior Design.php" data-ajax="false">Intetior Design</a></li>
-        <li><a href="#">Login</a></li>
-    </ul>
-    <!--Login-->
-    <div class="row">
-        <div class="col-6">
-            <h4>Login</h4>
-            <form method="post" action="./includes/login.inc.php">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input name="lgid" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter usernameid">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div id="content-wrapper">
+        <div class="container">
+            <div class="col-md-2">
+                <div class="nenxanh"></div>
+            </div>
+            <div class="col-md-8">
+                <div class="nenhong"></div>
+                <ul class="menu cf">
+                    <li><a href="./JBStudio.php" data-ajax="false">Home</a></li>
+                    <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
+                    <li>
+                        <a href="">Catalogue</a>
+                        <ul class="submenu">
+                            <li><a href="./Catalogue/YourHome.php" data-ajax="false">Your Home</a></li>
+                            <li><a href="./Catalogue/Ofice.php" data-ajax="false">Office</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./Interior Design.php">Intetior Design</a></li>
+                    <?php
+                        if($_SESSION['logged']){
+                            echo ' <form method="post" action="./includes/logout.inc.php">
+                             <li><a href="./login.php">Logout</a></li>
+                             </form>
+                             ';
+                        }
+                        else{
+                            echo "<li><a href='./login.php' data-ajax="false">Login</a></li>";
+                        }
+                    ?>
+                   
+                </ul>
+                <div class="col-md-2">
+                    <div class="nenxanh"></div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input name="lgpwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary" name="loginBtn">Submit</button>
-            </form>
+            </div>
         </div>
-        <div class="col-6">
-            <h4>Create Account</h4>
-            <form method="post" action = "./includes/register.inc.php">
-                <div class="form-group">
-                    <label for="exampleInputName">Your Name</label>
-                    <input name="name" type="name" class="form-control" id="exampleInputName" placeholder="Enter Your Name">
-                    <label for="phonenumber">Phone number</label>
-                    <input name="phonenumber" type="text" class="form-control" id="phonenum" placeholder="Phone Number">
-                    <label for="address">Address</label>
-                    <input name="address" type="text" class="form-control"  placeholder="Address">
-                    <label for="exampleInputEmail1">Email </label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <label for="password">Password</label>
-                    <input name="password" type="password" class="form-control"  placeholder="Password">
-                    <label for="password-rp">Password Repeat</label>
-                    <input name="password-rp" type="password" class="form-control"  placeholder="Password">
-                </div>
+    </div>
+    </div>
 
-                <button type="submit" class="btn btn-primary" name="registerBtn">Create</button>
-            </form>
+    <div id="background-carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item" style="background-image:url(http://thietkenoithatangel.com/dtool/data/computer/web765/thiet-ke-noi-that-bang-be-tong-cho-cac-khong-gian-phong-khach-phan-2-3.jpg)"></div>
+                <div class="item active left" style="background-image:url(http://www.noithatqi.vn/uploads/29-05-2018/khach-1-modern-29-05-2018-d8f0v.png)"></div>
+                <div class="item next left" style="background-image:url(https://donggia.vn/wp-content/uploads/2018/12/mau-thiet-ke-noi-that-phong-khach-biet-thu-dep-2.jpg)"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navButton" id="previous">&#10094;</div>
+    <div class="navButton" id="next">&#10095;</div>
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                pause: 'none'
+            })
+        });
+    </script>
 </body>
 
 </html>
