@@ -30,12 +30,13 @@
          exit();
         }
         else{
-            echo '<h1>' .$name. '</h1>';
             $query = "INSERT INTO Agency (AgencyName, AgencyPhoneNumber, AgencyAddress, Email, Tel ,Password1)
              VALUES ('".$name."','".$phonenumber."','".$address."','".$email."','".$phonenumber."','".$password."')";
             $result = pg_query($conn, $query);
           
-            echo '<h1>haha' .$result. '</h1>';
+            header("location: ../login.php?register=success");
+            exit();
+            
     
         }
     }
