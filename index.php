@@ -65,10 +65,10 @@
                                 </ul>
                             </li>
                             <li><a href="./Interior Design.php">Intetior Design</a></li>
-                            <li><a href="./login.php">Logout</a></li>
+                            <li><a href="./login.php" data-ajax="false">Login</a></li>
                             
                                      </form>
-                            <li><a href="./login.php" data-ajax="false">Login</a></li>';
+                            ';
                         }
                     ?>
                    
