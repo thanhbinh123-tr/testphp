@@ -28,7 +28,11 @@
             </div>
             <div class="col-md-8">
                 <div class="nenhong"></div>
-                <ul class="menu cf">
+                
+                    <?php
+                        if($_SESSION['logged']){
+                            echo ' <form method="post" action="./includes/logout.inc.php">
+                            <ul class="menu cf">
                     <li><a href="./JBStudio.php" data-ajax="false">Home</a></li>
                     <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
                     <li>
@@ -39,15 +43,27 @@
                         </ul>
                     </li>
                     <li><a href="./Interior Design.php">Intetior Design</a></li>
-                    <?php
-                        if($_SESSION['logged']){
-                            echo ' <form method="post" action="./includes/logout.inc.php">
-                             <li><a href="./login.php">Logout</a></li>
+                    <li><a href="./login.php">Logout</a></li>
+                    
                              </form>
                              ';
                         }
                         else{
-                            echo "<li><a href='./login.php' data-ajax="false">Login</a></li>";
+                            echo '<ul class="menu cf">
+                            <li><a href="./JBStudio.php" data-ajax="false">Home</a></li>
+                            <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
+                            <li>
+                                <a href="">Catalogue</a>
+                                <ul class="submenu">
+                                    <li><a href="./Catalogue/YourHome.php" data-ajax="false">Your Home</a></li>
+                                    <li><a href="./Catalogue/Ofice.php" data-ajax="false">Office</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./Interior Design.php">Intetior Design</a></li>
+                            <li><a href="./login.php">Logout</a></li>
+                            
+                                     </form>
+                            <li><a href="./login.php" data-ajax="false">Login</a></li>';
                         }
                     ?>
                    
