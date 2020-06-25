@@ -21,7 +21,7 @@
          header("Location: ../login.php?errormail");
          exit();
         }
-        else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
+        else if(!preg_match("/^[a-zA-Z0-9]*$/", $name)){
          header("Location: ../login.php?errornme");
          exit();
         }
