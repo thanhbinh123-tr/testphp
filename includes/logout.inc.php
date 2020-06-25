@@ -8,7 +8,6 @@ if(isset($_['logoutBtn'])){
     exit();
 }
 else{
-if(isset($_['logoutBtn'])){
     session_start();
     session_unset();
     session_destroy();
