@@ -1,10 +1,13 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <title>JB Studio</title>
-    <link rel="stylesheet" href="C:/Web_Desgin/Styles/JBStudio.css" />
+    <link rel="stylesheet" href="./Styles/JBStudio.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -18,7 +21,6 @@
 </head>
 
 <body>
-
     <div id="content-wrapper">
         <div class="container">
             <div class="col-md-2">
@@ -27,17 +29,28 @@
             <div class="col-md-8">
                 <div class="nenhong"></div>
                 <ul class="menu cf">
-                    <li><a href="C:\Web_Desgin\Html\Home/JBStudio.html">Home</a></li>
-                    <li><a href="C:\Web_Desgin\Html\Home/AboutUs.html">About Us</a></li>
+                    <li><a href="./JBStudio.php" data-ajax="false">Home</a></li>
+                    <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
                     <li>
                         <a href="">Catalogue</a>
                         <ul class="submenu">
-                            <li><a href="C:/Web_Desgin/Html/Home/Catalogue/YourHome.html">Your Home</a></li>
-                            <li><a href="C:/Web_Desgin/Html/Home/Catalogue/Ofice.html">Office</a></li>
+                            <li><a href="./Catalogue/YourHome.php" data-ajax="false">Your Home</a></li>
+                            <li><a href="./Catalogue/Ofice.php" data-ajax="false">Office</a></li>
                         </ul>
                     </li>
-                    <li><a href="C:\Web_Desgin\Html\Home/Interior Design.html">Intetior Design</a></li>
-                    <li><a href="C:\Web_Desgin\Html\Home/login.html">Login</a></li>
+                    <li><a href="./Interior Design.php">Intetior Design</a></li>
+                    <?php
+                        if($_SESSION['logged']){
+                            echo ' <form method="post" action="./includes/logout.inc.php">
+                             <li><a href="./login.php">Logout</a></li>
+                             </form>
+                             ';
+                        }
+                        else{
+                            echo "<li><a href='./login.php' data-ajax="false">Login</a></li>";
+                        }
+                    ?>
+                   
                 </ul>
                 <div class="col-md-2">
                     <div class="nenxanh"></div>
