@@ -11,18 +11,18 @@
 </head>
 
 <body>
-    <img class="logo" src="C:/Web_Desgin/Images/logo.jpg" alt="">
+    <img class="logo" src="./Images/logo.jpg" alt="">
     <ul class="menu cf">
-        <li><a href="C:/Web_Desgin/Html/Home/JBStudio.html">Home</a></li>
-        <li><a href="C:/Web_Desgin/Html/Home/AboutUs.html">About Us</a></li>
+        <li><a href="./index.php" data-ajax="false">Home</a></li>
+        <li><a href="./AboutUs.php" data-ajax="false">About Us</a></li>
         <li>
             <a href="">Catalogue</a>
             <ul class="submenu">
-                <li><a href="C:/Web_Desgin/Html/Home/Catalogue/Ofice.html">Office</a></li>
-                <li><a href="C:/Web_Desgin/Html/Home/Catalogue/YourHome.html">Your Home</a></li>
+                <li><a href="./Catalogue/Ofice.html" data-ajax="false">Office</a></li>
+                <li><a href="./Catalogue/YourHome.html" data-ajax="false">Your Home</a></li>
             </ul>
         </li>
-        <li><a href="C:/Web_Desgin/Html/Home/Interior Design.html">Intetior Design</a></li>
+        <li><a href="./Interior Design.php" data-ajax="false">Intetior Design</a></li>
         <li><a href="#">Login</a></li>
     </ul>
     <!--Login-->
@@ -31,15 +31,15 @@
             <h4>Login</h4>
             <form method="post" action="./includes/login.inc.php">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input name="lgid" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter usernameid">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input name="lgpwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <a class="btn btn-primary" href="C:/Web_Desgin/Html/Home/JBStudio.html" role="button">Submit</a>
+                <button type="submit" class="btn btn-primary" name="loginBtn">Submit</button>
             </form>
         </div>
         <div class="col-6">
