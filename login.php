@@ -44,7 +44,7 @@
         </div>
         <div class="col-6">
             <h4>Create Account</h4>
-            <form method="post" action = "register.inc.php">
+            <form method="post" action = "./includes/register.inc.php">
                 <div class="form-group">
                     <label for="exampleInputName">Your Name</label>
                     <input name="name" type="name" class="form-control" id="exampleInputName" placeholder="Enter Your Name">
